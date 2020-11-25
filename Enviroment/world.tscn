@@ -1,6 +1,5 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=9 format=2]
 
-[ext_resource path="res://Prefabs/SimpleFPSCamera.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Enviroment/recibidor01.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Enviroment/Hall n Floor.tscn" type="PackedScene" id=3]
 [ext_resource path="res://default_env.tres" type="Environment" id=4]
@@ -122,9 +121,6 @@ transform = Transform( 1, 0, 0, 0, 1, -1.74846e-07, 0, 1.74846e-07, 1, 0, 2.7533
 mesh = SubResource( 2 )
 material/0 = null
 
-[node name="Camera" parent="." instance=ExtResource( 1 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.32895, -4.79301 )
-
 [node name="GIProbe" type="GIProbe" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.386676, -1.02402 )
 visible = false
@@ -132,15 +128,18 @@ extents = Vector3( 13.2186, 4.2018, 13.5921 )
 data = SubResource( 3 )
 
 [node name="recibidor01" parent="." instance=ExtResource( 2 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.457929, -0.0218053, 0 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0490722, 1.43542, 1.87659 )
 
 [node name="CharcterController" parent="." instance=ExtResource( 5 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.52601, -3.1993, 0 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.52601, -1.67432, 0 )
 
 [node name="Collisions" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1257, 0 )
 
 [node name="StaticBody" type="StaticBody" parent="Collisions"]
 
 [node name="CollisionShape" type="CollisionShape" parent="Collisions/StaticBody"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -4.78923, 0 )
 shape = SubResource( 4 )
+
+[editable path="CharcterController"]

@@ -20,6 +20,7 @@ func _process(delta):
 	var move_vec = Vector3.ZERO
 	if Input.is_action_pressed("ui_up"):
 		move_vec += Vector3.FORWARD
+		
 		pass
 	elif Input.is_action_pressed("ui_down"):
 		move_vec += Vector3.BACK
@@ -33,6 +34,8 @@ func _physics_process(delta):
 
 func _input(event):
 	if event is InputEventMouseMotion:
-		cam.rotation_degrees.y -= mouse_sens * event.relative.x
+		rotation_degrees.y -= mouse_sens * event.relative.x
 		cam.rotation_degrees.x -= mouse_sens * event.relative.y
-		cam.rotation_degrees.x = clamp(rotation_degrees.x,-90,90)
+		cam.rotation_degrees.x = clamp(cam.rotation_degrees.x,-90,90)
+
+
